@@ -7,3 +7,5 @@ After downloading the dependencies, run the simulation by running the main file 
 # Simulation
 The simulation screen shows a green circle which is the 'drone', a red circle which is the 'master' and a white circle which is the 'charging station'
 
+Manual drone control can be done with the arrow keys for now
+
