@@ -1,0 +1,10 @@
+#do the wandering algorithm
+
+
+
+make pathfinding and moving
+    -pathfinding algorithm
+make behaviours
+    -different behaviours and implementation
+
+translate to ros or to real life application
