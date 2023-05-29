@@ -93,7 +93,11 @@ class EVA():
             self.battery -= 1
 
     def control_overrides(self, distance_vector: PVector):
-        # battery low override
+        # In this function, behaviours should be written putting the highest priority at the top
+        # in this case, battery life is the most important behaviour to control
+        
+        
+        # Battery low override
         if self.battery < 30:
             self.seek_recharge(distance_vector)
         else:
@@ -107,3 +111,6 @@ class EVA():
             distance_vector.scale_to_length(self.max_speed)
             self.moveWith(distance_vector)
             self.update()
+            
+    def wander(self):
+        pass
