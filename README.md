@@ -1,4 +1,5 @@
 # EVA-Project
+Electronic Virtual Animal
 
 # Dependencies
 -pygame
