@@ -64,21 +64,32 @@ class EVA():
 
     # Functions to run it in the simulation in pygame
     def update(self):
+        # simulate drone facing
+        if self.vel.length() != 0:
+            self.facing = self.vel
+            self.facing.scale_to_length(15)
+
         self.pos += self.vel
         self.vel += self.accel
 
     def draw(self):
         pygame.draw.circle(self.win, (0, 255, 0), self.pos, 10)
         pygame.draw.line(self.win, (255, 255, 255),
-                         self.pos, self.pos + self.facing)
+                         self.pos, self.pos + self.facing, 3)
+
+    # Function that runs EVA protocols
 
     def run(self):
         # set updating states
         distance_vector: PVector = self.charging_Station.getPos() - self.pos
+
+        # Simulate battery discharge and recharge using the distance to the charging_station
         self.batteryUpdate(distance_vector)
 
+        # Control EVA using the arrow keys
         self.control_EVA()
 
+        # Self programmed behaviours
         self.control_overrides(distance_vector)
         self.draw()
 
@@ -95,8 +106,7 @@ class EVA():
     def control_overrides(self, distance_vector: PVector):
         # In this function, behaviours should be written putting the highest priority at the top
         # in this case, battery life is the most important behaviour to control
-        
-        
+
         # Battery low override
         if self.battery < 30:
             self.seek_recharge(distance_vector)
@@ -111,6 +121,6 @@ class EVA():
             distance_vector.scale_to_length(self.max_speed)
             self.moveWith(distance_vector)
             self.update()
-            
+
     def wander(self):
         pass
