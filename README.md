@@ -2,7 +2,8 @@
 Electronic Virtual Animal
 
 # Dependencies
--pygame
+-pygame  
+-noise
 # Instructions
 After downloading the dependencies, run the simulation by running the main file 'simulate.py'
 # Simulation
