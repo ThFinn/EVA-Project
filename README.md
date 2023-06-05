@@ -3,7 +3,7 @@ Electronic Virtual Animal
 
 # Dependencies
 -pygame  
--noise
+-noise (you might need to install Mirosoft Visual C++ 14.0 in order to install this package)
 # Instructions
 After downloading the dependencies, run the simulation by running the main file 'simulate.py'
 # Simulation
