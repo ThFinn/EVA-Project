@@ -11,6 +11,7 @@ width, height = 600, 600
 def main():
     # setup pygame
     pygame.init()
+    #print('hi')
     pygame.display.set_caption("EVA Simulation")
     win = pygame.display.set_mode((width, height))
     clock = pygame.time.Clock()
@@ -21,6 +22,8 @@ def main():
     me = Master(width, height, win)
     eva = EVA(width, height, win, charge, me)
 
+    win = pygame.display.set_mode((width, height))
+
     running = True
     while running:
         for event in pygame.event.get():
@@ -28,14 +31,14 @@ def main():
                 running = False
 
         # draw state
-        win = pygame.display.set_mode((width, height))
+        
         charge.draw()
         eva.run()
         me.draw()
         pygame.display.update()
 
+        win.fill(0)
         clock.tick(fps)
-
     pygame.quit()
 
 
